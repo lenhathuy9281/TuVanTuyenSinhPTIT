@@ -1,6 +1,7 @@
 package com.ptit.tuvanptit.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.ptit.tuvanptit.R
 import com.ptit.tuvanptit.databinding.FragmentHomeBinding
 import com.ptit.tuvanptit.ui.home.function.FunctionData
 import com.ptit.tuvanptit.ui.home.function.GridFunctionAdapter
+import com.ptit.tuvanptit.utils.remote.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,6 +47,20 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initCarousel()
         initGridFunction()
+        homeViewModel.school.observe(viewLifecycleOwner) {
+            it?.let { result ->
+                Log.d("resultSchool", result.toString())
+                when (result.status) {
+                    Resource.Status.SUCCESS -> {
+
+                    }
+                    Resource.Status.LOADING -> {
+                    }
+                    Resource.Status.ERROR -> {
+                    }
+                }
+            }
+        }
     }
     private fun initCarousel() {
         val imageList = listOf(

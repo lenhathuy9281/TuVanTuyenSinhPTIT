@@ -71,7 +71,7 @@ class CallAdapterFactory private constructor() : CallAdapter.Factory() {
                 override fun onFailure(call: Call<S>, t: Throwable) {
                     Timber.d("EO-75 onFailure()")
                     val apiResponse = when (t) {
-                        is IOException, is SSLHandshakeException -> Resource.error(
+                        is IOException -> Resource.error(
                             NoNetworkException("No network connection"),
                             null
                         )
