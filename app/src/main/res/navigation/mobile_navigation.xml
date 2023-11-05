@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.ptit.tuvanptit.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_news"
+            app:destination="@id/navigation_news" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -18,8 +22,14 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.ptit.tuvanptit.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_news"
+        android:name="com.ptit.tuvanptit.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_school_info"
+        android:name="com.ptit.tuvanptit.ui.school.SchoolInfoFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>
