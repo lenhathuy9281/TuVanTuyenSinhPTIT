@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TuVAnPTIT</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
     <string name="title_news">News</string>
 
     <string name="image1" translatable="false">https://salt.tikicdn.com/cache/w1080/ts/banner/35/84/47/b5968aabcf76d21b74c9afe34664d6c1.png.webp</string>

@@ -1,9 +1,9 @@
-package com.ptit.tuvanptit.ui.more
+package com.ptit.tuvanptit.ui.news
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MoreFunctionViewModel @Inject constructor(): ViewModel() {
+class DetailNewsViewModel @Inject constructor() : ViewModel() {
 }

@@ -36,10 +36,6 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
         binding.viewModel = homeViewModel
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

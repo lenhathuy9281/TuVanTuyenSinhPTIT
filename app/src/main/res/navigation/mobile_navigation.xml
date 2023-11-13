@@ -17,19 +17,29 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.ptit.tuvanptit.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.ptit.tuvanptit.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_news"
         android:name="com.ptit.tuvanptit.ui.news.NewsFragment"
         android:label="@string/title_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_navigation_news_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_school_info"
         android:name="com.ptit.tuvanptit.ui.school.SchoolInfoFragment"
         android:label="@string/title_news"
         tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.ptit.tuvanptit.ui.news.NewsDetailFragment"
+        android:label="News Detail Fragment">
+    </fragment>
 </navigation>
