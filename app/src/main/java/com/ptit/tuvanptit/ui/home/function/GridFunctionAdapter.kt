@@ -10,6 +10,8 @@ class GridFunctionAdapter(recyclerDataArrayList: List<FunctionData>) :
     RecyclerView.Adapter<GridFunctionAdapter.RecyclerViewHolder>() {
     private val courseDataArrayList: ArrayList<FunctionData>
 
+    var onClickFunction: ((FunctionData) -> Unit)? = null
+
     init {
         courseDataArrayList = ArrayList(recyclerDataArrayList)
     }
@@ -34,6 +36,17 @@ class GridFunctionAdapter(recyclerDataArrayList: List<FunctionData>) :
 
     // View Holder Class to handle Recycler View.
     inner class RecyclerViewHolder(private val binding: ItemFunctionHomeBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            with(binding) {
+                root.setOnClickListener {
+                    if (bindingAdapterPosition > -1) {
+                        onClickFunction?.invoke(courseDataArrayList[bindingAdapterPosition])
+                    }
+
+                }
+            }
+        }
 
         fun bind(item: FunctionData) {
             with(binding) {

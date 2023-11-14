@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_news"
             app:destination="@id/navigation_news" />
+        <action
+            android:id="@+id/action_navigation_home_to_undevelopFragment"
+            app:destination="@id/undevelopFragment" />
     </fragment>
 
     <fragment
@@ -41,5 +44,11 @@
         android:id="@+id/newsDetailFragment"
         android:name="com.ptit.tuvanptit.ui.news.NewsDetailFragment"
         android:label="News Detail Fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/undevelopFragment"
+        android:name="com.ptit.tuvanptit.ui.underdevelop.UnDevelopFragment"
+        android:label="Undevelop Fragment">
     </fragment>
 </navigation>

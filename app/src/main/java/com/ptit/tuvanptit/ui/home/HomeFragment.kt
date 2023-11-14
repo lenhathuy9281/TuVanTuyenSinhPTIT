@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ptit.tuvanptit.R
 import com.ptit.tuvanptit.databinding.FragmentHomeBinding
@@ -70,17 +71,28 @@ class HomeFragment : Fragment() {
 
     private fun getListFunction(): List<FunctionData> {
         return listOf(
-            FunctionData("Tư vấn học bổng", ""),
-            FunctionData("Tư vấn du học", "R.drawable.ic_study_abroad"),
-            FunctionData("Tư vấn việc làm", "R.drawable.ic_job"),
-            FunctionData("Tư vấn học phí", "R.drawable.ic_scholarship"),
-            FunctionData("Tư vấn tự động", "R.drawable.ic_scholarship"),
+            FunctionData("Tư vấn học bổng", "",0),
+            FunctionData("Tư vấn du học", "R.drawable.ic_study_abroad", 1),
+            FunctionData("Tư vấn việc làm", "R.drawable.ic_job", 2),
+            FunctionData("Tư vấn học phí", "R.drawable.ic_scholarship", 3),
+            FunctionData("Tư vấn tự động", "R.drawable.ic_scholarship", 4),
 
         )
     }
 
     private fun initGridFunction() {
-        val gridFunctionAdapter = GridFunctionAdapter(getListFunction())
+        val gridFunctionAdapter = GridFunctionAdapter(getListFunction()).apply {
+            onClickFunction = {
+                when(it.functionId) {
+                    0 -> {
+
+                    }
+                    else -> {
+                        findNavController().navigate(R.id.action_navigation_home_to_undevelopFragment)
+                    }
+                }
+            }
+        }
         binding.rcvFunctionsHome.adapter = gridFunctionAdapter
         binding.rcvFunctionsHome.layoutManager = GridLayoutManager(requireContext(), 2)
     }
